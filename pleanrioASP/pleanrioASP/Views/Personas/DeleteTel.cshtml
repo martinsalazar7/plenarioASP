@@ -1,0 +1,25 @@
+﻿@model pleanrioASP.Data.Entities.Telefono
+
+@{
+	ViewData["Title"] = "Delete";
+}
+
+<h1>Borrar</h1>
+
+<h3>Esta seguro que desea borrar?</h3>
+<div>
+<dl class="row">
+	<dt class="col-sm-2">
+		@Html.DisplayNameFor(model => model.Numero)
+	</dt>
+	<dd class="col-sm-10">
+		@Html.DisplayFor(model => model.Numero)
+	</dd>
+</dl>
+
+	<form asp-action="DeleteTel">
+		<input type="hidden" asp-for="Id" />
+		<input type="submit" value="Borrar" class="btn btn-outline-danger" /> |
+		<a asp-action="Details" asp-route-id="@Model.Persona.Id" class="btn btn-outline-success">Regresar</a>
+	</form>
+</div>
